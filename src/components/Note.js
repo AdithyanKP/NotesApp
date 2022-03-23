@@ -1,12 +1,12 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ".././index.css";
-const Note = () => {
+const Note = ({ id, text, date }) => {
   return (
     <div className="note">
-      <span>this is our first note</span>
+      <span>{text}</span>
       <div className="note-footer">
-        <small>12/3/2022 </small>
+        <small>{date}</small>
         <DeleteIcon className="delete-icon" size="1.3 rem" />
       </div>
     </div>
