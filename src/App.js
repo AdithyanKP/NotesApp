@@ -22,12 +22,27 @@ const App = () => {
     },
   ]);
 
+  //adding new Note
   const addNote = (text) => {
-    console.log(text);
+    const date = new Date();
+    console.log(date);
+    const newNote = {
+      id: nanoid(),
+      text,
+      date: date.toLocaleDateString(),
+    };
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
+  };
+
+  //deleting note
+  const deleteNote = (id) => {
+    const newNote = notes.filter((note) => note.id !== id);
+    setNotes(newNote);
   };
   return (
     <div className="container">
-      <NoteList notes={notes} addNote={addNote} />
+      <NoteList notes={notes} addNote={addNote} deleteNote={deleteNote} />
     </div>
   );
 };

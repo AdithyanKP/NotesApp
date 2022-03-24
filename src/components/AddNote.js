@@ -3,14 +3,23 @@ import "../index.css";
 const AddNote = ({ addNote }) => {
   const [newNote, setNewNote] = useState("");
 
+  //for input limit
+  const charLimit = 200;
+
   //for saving the text input
   const handleChange = (value) => {
-    setNewNote(value);
-    console.log(newNote);
+    //char limit checking
+    if (charLimit - value.length >= 0) {
+      setNewNote(value);
+      console.log(newNote);
+    }
   };
   //when save click
   const handleSaveClick = () => {
-    addNote(newNote);
+    if (newNote.trim().length > 0) {
+      addNote(newNote);
+      setNewNote("");
+    }
   };
   return (
     <div className="note new">
@@ -22,7 +31,7 @@ const AddNote = ({ addNote }) => {
         onChange={(e) => handleChange(e.target.value)}
       ></textarea>
       <div className="note-footer">
-        <small>200 remaining</small>
+        <small>{charLimit - newNote.length} remaining</small>
         <button
           className="
         save"
