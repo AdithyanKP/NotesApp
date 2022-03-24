@@ -25,3 +25,21 @@
   padding-right: 10px;
   padding-left: 10px;
 }
+.note.new {
+  background-color: rgb(127, 216, 216);
+}
+textarea {
+  background-color: rgb(127, 216, 216);
+  border: none;
+  resize: none;
+}
+.save {
+  background-color: rgb(245, 238, 238);
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  border: none;
+}
+.save:hover {
+  background-color: azure;
+  cursor: pointer;
+}
