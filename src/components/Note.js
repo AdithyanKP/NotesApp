@@ -10,11 +10,7 @@ const Note = ({ id, text, date, deleteNote }) => {
       <span>{text}</span>
       <div className="note-footer">
         <small>{date}</small>
-        {/*  <DeleteIcon
-          className="delete-icon"
-          size="1.3 rem"
-          onClick={() => deleteNote(id)}
-        /> */}
+
         <IconButton aria-label="delete" onClick={() => deleteNote(id)}>
           <DeleteIcon />
         </IconButton>
