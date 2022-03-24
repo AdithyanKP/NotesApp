@@ -3,6 +3,7 @@ import NoteList from "./components/NoteList";
 import "./index.css";
 import { nanoid } from "nanoid";
 import Search from "./components/Search";
+import Header from "./components/Header";
 const App = () => {
   //initial state config
   const [notes, setNotes] = useState([
@@ -46,6 +47,7 @@ const App = () => {
   };
   return (
     <div className="container">
+      <Header />
       <Search searchHandle={setSearchText} />
       <NoteList
         //search handling
