@@ -27,6 +27,7 @@
   margin-right: auto;
   padding-right: 10px;
   padding-left: 10px;
+  min-height: 100vh;
 }
 .note.new {
   background-color: rgb(127, 216, 216);
@@ -64,10 +65,22 @@ textarea {
   outline: none;
 }
 .header {
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .header-text {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-weight: 600;
+}
+
+.dark-mode {
+  background-color: black;
+}
+.dark-mode h1 {
+  color: white;
+}
+body {
+  margin: 0;
 }
