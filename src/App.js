@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NoteList from "./components/NoteList";
 import "./index.css";
 import { nanoid } from "nanoid";
@@ -6,28 +6,26 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 const App = () => {
   //initial state config
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: "myfirst note",
-      date: "3/10/2022",
-    },
-    {
-      id: nanoid(),
-      text: "mySecond note",
-      date: "3/10/2022",
-    },
-    {
-      id: nanoid(),
-      text: "myThird note",
-      date: "3/10/2022",
-    },
-  ]);
+  const [notes, setNotes] = useState([]);
   //search state
   const [searchText, setSearchText] = useState("");
 
   //dark mode state
   const [darkmode, setDarkMode] = useState(false);
+
+  //retriving data from local storage
+  useEffect(() => {
+    const savedData = JSON.parse(localStorage.getItem("react-notes-app"));
+    console.log(savedData);
+    if (savedData) {
+      setNotes(savedData);
+    }
+  }, []);
+
+  //saving local storage
+  useEffect(() => {
+    localStorage.setItem("react-notes-app", JSON.stringify(notes));
+  }, [notes]);
 
   //adding new Note
   const addNote = (text) => {
@@ -51,7 +49,7 @@ const App = () => {
   return (
     <div className={`${darkmode && "dark-mode"}`}>
       <div className="container">
-        <Header handleDarkMode={setDarkMode} />
+        <Header handleDarkMode={setDarkMode} darkmode={darkmode} />
         <Search searchHandle={setSearchText} />
         <NoteList
           //search handling
