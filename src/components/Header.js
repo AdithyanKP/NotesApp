@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css";
-const Header = ({ handleDarkMode }) => {
+const Header = ({ handleDarkMode, darkmode }) => {
   return (
     <div className="header">
       <h1 className="header-text">My-Notes</h1>
@@ -8,7 +8,7 @@ const Header = ({ handleDarkMode }) => {
         onClick={() => handleDarkMode((previousMode) => !previousMode)}
         className="save"
       >
-        Toggle Button
+        {darkmode ? "Light Mode" : "Dark Mode"}
       </button>
     </div>
   );
