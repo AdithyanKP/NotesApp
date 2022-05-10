@@ -1,5 +1,5 @@
 .note {
-  background-color: bisque;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
 
   border-radius: 5px;
@@ -30,10 +30,10 @@
   min-height: 100vh;
 }
 .note.new {
-  background-color: rgb(127, 216, 216);
+  background-color: white;
 }
 textarea {
-  background-color: rgb(127, 216, 216);
+  background-color: white;
   border: none;
   resize: none;
 }
