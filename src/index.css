@@ -1,5 +1,5 @@
 .note {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(177, 201, 200);
   padding: 10px;
 
   border-radius: 5px;
@@ -38,13 +38,13 @@ textarea {
   resize: none;
 }
 .save {
-  background-color: rgb(245, 238, 238);
+  background-color: rgb(177, 201, 200);
   border-radius: 10px;
   padding: 5px 10px 5px 10px;
   border: none;
 }
 .save:hover {
-  background-color: azure;
+  background-color: rgb(23, 92, 153);
   cursor: pointer;
 }
 .search {
