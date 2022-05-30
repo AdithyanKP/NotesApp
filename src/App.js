@@ -11,7 +11,7 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
 
   //dark mode state
-  const [darkmode, setDarkMode] = useState(false);
+  const [darkmode, setDarkMode] = useState(true);
 
   //retriving data from local storage
   useEffect(() => {
